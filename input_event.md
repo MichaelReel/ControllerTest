@@ -1,25 +1,25 @@
 # InputEventJoypadMotion
 
-## Turle Beach Recon
+## Xbox 360 and Turle Beach Recon
 
 ```
-			 axis=4                                                      axis=5                            
-				\                                                          /                               
-				 |                                                        |                                
-				 V                                                        V                                
+             axis=4                                                      axis=5                            
+                \                                                          /                               
+                 |                                                        |                                
+                 V                                                        V                                
 button_index=9    ___   ___---------''''''''''''''''''''---------___   ___    button_index=10              
-			 \ _-' __--'    button_index=5                          '--__ '-_/                             
-			_-' _-'                       \ .--.                         '-_ '-_                           
-			\_-'                           (    )                    -Y-    '-_/ <------Y--- button_index=3
-			/      (+0)              __     '--'     __                        \                           
-		   /         |              (__)            (__)      -X-               \ <-----X--- button_index=2
-		  /    (-1)-- --(+1)         /                \                  -B-     \ <----B--- button_index=1
-		 /       axis|       button_index=4     button_index=6                    \                        
-		/          (-0)                                           -A-              \ <--A--- button_index=0
-	   /        /                                                                   \                      
-	  /        /                .---o-.              (-3)                            \                     
-	 /   button_index=7        /    |  \           axis|                              \                    
-	/                         o---+-+   |        (-2)-- --(+2)                         \                   
+             \ _-' __--'    button_index=5                          '--__ '-_/                             
+            _-' _-'                       \ .--.                         '-_ '-_                           
+            \_-'                           (    )                    -Y-    '-_/ <------Y--- button_index=3
+            /      (+0)              __     '--'     __                        \                           
+           /         |              (__)            (__)      -X-               \ <-----X--- button_index=2
+          /    (-1)-- --(+1)         /                \                  -B-     \ <----B--- button_index=1
+         /       axis|       button_index=4     button_index=6                    \                        
+        /          (-0)                                           -A-              \ <--A--- button_index=0
+       /        /                                                                   \                      
+      /        /                .---o-.              (-3)                            \                     
+     /   button_index=7        /    |  \           axis|                              \                    
+    /                         o---+-+   |        (-2)-- --(+2)                         \                   
    |                          |   +-+---o              |                                |                  
    |                           \  |    /             (+3)  \                            |                  
   /                             '-o---'                     '---- button_index=8         \                 
@@ -29,15 +29,15 @@ button_index=9    ___   ___---------''''''''''''''''''''---------___   ___    bu
   |               _-          ^   ^ ^   ^                               -_               |                 
   |             _-            |   | |   |                                 -_             |                 
    \          _-              |   | |   |                                   -_          /                  
-	\_______-'                |   | |   |                                     '-_______/                   
-							  |   | |    \                                                                 
-							  |   | |     '--- D-RIGHT --- button_index=14                                 
-							  |   |  \                                                                     
-							  |   |   '--- D-UP ---------- button_index=11                                 
-							  |    \                                                                       
-							  |     '--- D-DOWN ---------- button_index=12                                 
-							   \                                                                           
-								'--- D-LEFT -------------- button_index=13                                 
+    \_______-'                |   | |   |                                     '-_______/                   
+                              |   | |    \                                                                 
+                              |   | |     '--- D-RIGHT --- button_index=14                                 
+                              |   |  \                                                                     
+                              |   |   '--- D-UP ---------- button_index=11                                 
+                              |    \                                                                       
+                              |     '--- D-DOWN ---------- button_index=12                                 
+                               \                                                                           
+                                '--- D-LEFT -------------- button_index=13                                 
 ```
 
 | `button_index` | Button                |
