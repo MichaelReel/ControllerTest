@@ -14,3 +14,9 @@ config/name="ControllerTest"
 run/main_scene="res://ControllerTest.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://builds/": "gray"
+}
