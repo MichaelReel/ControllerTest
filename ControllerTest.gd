@@ -33,8 +33,21 @@ var key_code_buffer: Dictionary = {}
 ]
 @onready var keycodes: Label = $Keyboard/KeyCodes
 
-func _unhandled_input(event: InputEvent):
-	if event is InputEventJoypadButton:
+
+func _ready() -> void:
+	text_buffer.push_back("OS: " + OS.get_name())
+	text_buffer.push_back("Distro: " + OS.get_distribution_name())
+	text_buffer.push_back("CPU: " + OS.get_processor_name())
+	text_buffer.push_back("GPU: " + RenderingServer.get_rendering_device().get_device_name())
+	label.text =  "\n".join(text_buffer)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		# Ignore the mouse leaving and entering the window
+		pass
+	
+	elif event is InputEventJoypadButton:
 		buttons[event.button_index].button_pressed = event.pressed
 
 	elif event is InputEventJoypadMotion:
