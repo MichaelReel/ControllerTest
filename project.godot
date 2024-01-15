@@ -15,8 +15,26 @@ run/main_scene="res://ControllerTest.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1200
+window/size/viewport_height=800
+
 [file_customization]
 
 folder_colors={
 "res://builds/": "gray"
+}
+
+[input]
+
+back_plate_p1_r4={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":16,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+back_plate_p1_l4={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":17,"pressure":0.0,"pressed":false,"script":null)
+]
 }

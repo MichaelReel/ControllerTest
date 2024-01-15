@@ -25,221 +25,29 @@ grow_vertical = 2
 color = Color(0.129412, 0.211765, 0.2, 1)
 
 [node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(450, 300)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-label_settings = SubResource("LabelSettings_banrd")
-
-[node name="Buttons" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ControllerButton_0" type="CheckButton" parent="Buttons"]
-layout_mode = 2
-button_mask = 0
-text = "button_index=0"
-
-[node name="ControllerButton_1" type="CheckButton" parent="Buttons"]
-layout_mode = 2
-button_mask = 0
-text = "button_index=1"
-
-[node name="ControllerButton_2" type="CheckButton" parent="Buttons"]
-layout_mode = 2
-button_mask = 0
-text = "button_index=2"
-
-[node name="ControllerButton_3" type="CheckButton" parent="Buttons"]
-layout_mode = 2
-button_mask = 0
-text = "button_index=3"
-
-[node name="ControllerButton_4" type="CheckButton" parent="Buttons"]
-layout_mode = 2
-button_mask = 0
-text = "button_index=4"
-
-[node name="ControllerButton_5" type="CheckButton" parent="Buttons"]
-layout_mode = 2
-button_mask = 0
-text = "button_index=5"
-
-[node name="ControllerButton_6" type="CheckButton" parent="Buttons"]
-layout_mode = 2
-button_mask = 0
-text = "button_index=6"
-
-[node name="ControllerButton_7" type="CheckButton" parent="Buttons"]
-layout_mode = 2
-button_mask = 0
-text = "button_index=7"
-
-[node name="ControllerButton_8" type="CheckButton" parent="Buttons"]
-layout_mode = 2
-button_mask = 0
-text = "button_index=8"
-
-[node name="ControllerButton_9" type="CheckButton" parent="Buttons"]
-layout_mode = 2
-button_mask = 0
-text = "button_index=9"
-
-[node name="ControllerButton_10" type="CheckButton" parent="Buttons"]
-layout_mode = 2
-button_mask = 0
-text = "button_index=10"
-
-[node name="ControllerButton_11" type="CheckButton" parent="Buttons"]
-layout_mode = 2
-button_mask = 0
-text = "button_index=11"
-
-[node name="ControllerButton_12" type="CheckButton" parent="Buttons"]
-layout_mode = 2
-button_mask = 0
-text = "button_index=12"
-
-[node name="ControllerButton_13" type="CheckButton" parent="Buttons"]
-layout_mode = 2
-button_mask = 0
-text = "button_index=13"
-
-[node name="ControllerButton_14" type="CheckButton" parent="Buttons"]
-layout_mode = 2
-button_mask = 0
-text = "button_index=14"
-
-[node name="Axes" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 1
+anchors_preset = 3
 anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
-offset_left = -453.0
-offset_bottom = 176.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -14.0
 grow_horizontal = 0
-
-[node name="ControllerAxis_0" type="HBoxContainer" parent="Axes"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Axes/ControllerAxis_0"]
-layout_mode = 2
-text = "axis=0"
-
-[node name="HSlider" type="HSlider" parent="Axes/ControllerAxis_0"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-min_value = -1.0
-max_value = 1.0
-step = 0.001
-editable = false
-tick_count = 3
-ticks_on_borders = true
-
-[node name="ControllerAxis_1" type="HBoxContainer" parent="Axes"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Axes/ControllerAxis_1"]
-layout_mode = 2
-text = "axis=1"
-
-[node name="HSlider" type="HSlider" parent="Axes/ControllerAxis_1"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-min_value = -1.0
-max_value = 1.0
-step = 0.001
-editable = false
-tick_count = 3
-ticks_on_borders = true
-
-[node name="ControllerAxis_2" type="HBoxContainer" parent="Axes"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Axes/ControllerAxis_2"]
-layout_mode = 2
-text = "axis=2"
-
-[node name="HSlider" type="HSlider" parent="Axes/ControllerAxis_2"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-min_value = -1.0
-max_value = 1.0
-step = 0.001
-editable = false
-tick_count = 3
-ticks_on_borders = true
-
-[node name="ControllerAxis_3" type="HBoxContainer" parent="Axes"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Axes/ControllerAxis_3"]
-layout_mode = 2
-text = "axis=3"
-
-[node name="HSlider" type="HSlider" parent="Axes/ControllerAxis_3"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-min_value = -1.0
-max_value = 1.0
-step = 0.001
-editable = false
-tick_count = 3
-ticks_on_borders = true
-
-[node name="ControllerAxis_4" type="HBoxContainer" parent="Axes"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Axes/ControllerAxis_4"]
-layout_mode = 2
-text = "axis=4"
-
-[node name="HSlider" type="HSlider" parent="Axes/ControllerAxis_4"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-max_value = 1.0
-step = 0.001
-editable = false
-tick_count = 2
-ticks_on_borders = true
-
-[node name="ControllerAxis_5" type="HBoxContainer" parent="Axes"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Axes/ControllerAxis_5"]
-layout_mode = 2
-text = "axis=5"
-
-[node name="HSlider" type="HSlider" parent="Axes/ControllerAxis_5"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-max_value = 1.0
-step = 0.001
-editable = false
-tick_count = 2
-ticks_on_borders = true
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_banrd")
 
 [node name="Keyboard" type="Control" parent="."]
 clip_contents = true
 custom_minimum_size = Vector2(450, 250)
 layout_mode = 1
-anchors_preset = 6
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -20.0
-offset_bottom = 20.0
+offset_left = -450.0
+offset_bottom = 250.0
 grow_horizontal = 0
-grow_vertical = 2
 
 [node name="Label" type="Label" parent="Keyboard"]
 layout_mode = 1
@@ -256,13 +64,422 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -208.0
+offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "-
--
--
--
--
--
--
--"
+
+[node name="Controller_0" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 341.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Controller_0"]
+layout_mode = 2
+text = "Controller 0"
+
+[node name="ControllerButton_0" type="CheckButton" parent="Controller_0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=0"
+
+[node name="ControllerButton_1" type="CheckButton" parent="Controller_0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=1"
+
+[node name="ControllerButton_2" type="CheckButton" parent="Controller_0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=2"
+
+[node name="ControllerButton_3" type="CheckButton" parent="Controller_0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=3"
+
+[node name="ControllerButton_4" type="CheckButton" parent="Controller_0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=4"
+
+[node name="ControllerButton_5" type="CheckButton" parent="Controller_0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=5"
+
+[node name="ControllerButton_6" type="CheckButton" parent="Controller_0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=6"
+
+[node name="ControllerButton_7" type="CheckButton" parent="Controller_0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=7"
+
+[node name="ControllerButton_8" type="CheckButton" parent="Controller_0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=8"
+
+[node name="ControllerButton_9" type="CheckButton" parent="Controller_0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=9"
+
+[node name="ControllerButton_10" type="CheckButton" parent="Controller_0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=10"
+
+[node name="ControllerButton_11" type="CheckButton" parent="Controller_0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=11"
+
+[node name="ControllerButton_12" type="CheckButton" parent="Controller_0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=12"
+
+[node name="ControllerButton_13" type="CheckButton" parent="Controller_0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=13"
+
+[node name="ControllerButton_14" type="CheckButton" parent="Controller_0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=14"
+
+[node name="ControllerAxis_0" type="HBoxContainer" parent="Controller_0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Controller_0/ControllerAxis_0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "axis=0"
+
+[node name="HSlider" type="HSlider" parent="Controller_0/ControllerAxis_0"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+min_value = -1.0
+max_value = 1.0
+step = 0.001
+editable = false
+tick_count = 3
+ticks_on_borders = true
+
+[node name="ControllerAxis_1" type="HBoxContainer" parent="Controller_0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Controller_0/ControllerAxis_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "axis=1"
+
+[node name="HSlider" type="HSlider" parent="Controller_0/ControllerAxis_1"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+min_value = -1.0
+max_value = 1.0
+step = 0.001
+editable = false
+tick_count = 3
+ticks_on_borders = true
+
+[node name="ControllerAxis_2" type="HBoxContainer" parent="Controller_0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Controller_0/ControllerAxis_2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "axis=2"
+
+[node name="HSlider" type="HSlider" parent="Controller_0/ControllerAxis_2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+min_value = -1.0
+max_value = 1.0
+step = 0.001
+editable = false
+tick_count = 3
+ticks_on_borders = true
+
+[node name="ControllerAxis_3" type="HBoxContainer" parent="Controller_0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Controller_0/ControllerAxis_3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "axis=3"
+
+[node name="HSlider" type="HSlider" parent="Controller_0/ControllerAxis_3"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+min_value = -1.0
+max_value = 1.0
+step = 0.001
+editable = false
+tick_count = 3
+ticks_on_borders = true
+
+[node name="ControllerAxis_4" type="HBoxContainer" parent="Controller_0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Controller_0/ControllerAxis_4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "axis=4"
+
+[node name="HSlider" type="HSlider" parent="Controller_0/ControllerAxis_4"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+editable = false
+tick_count = 2
+ticks_on_borders = true
+
+[node name="ControllerAxis_5" type="HBoxContainer" parent="Controller_0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Controller_0/ControllerAxis_5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "axis=5"
+
+[node name="HSlider" type="HSlider" parent="Controller_0/ControllerAxis_5"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+editable = false
+tick_count = 2
+ticks_on_borders = true
+
+[node name="Controller_1" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.013
+anchor_bottom = 1.0
+offset_left = 349.131
+offset_right = 675.155
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Controller_1"]
+layout_mode = 2
+text = "Controller 1"
+
+[node name="ControllerButton_0" type="CheckButton" parent="Controller_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=0"
+
+[node name="ControllerButton_1" type="CheckButton" parent="Controller_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=1"
+
+[node name="ControllerButton_2" type="CheckButton" parent="Controller_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=2"
+
+[node name="ControllerButton_3" type="CheckButton" parent="Controller_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=3"
+
+[node name="ControllerButton_4" type="CheckButton" parent="Controller_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=4"
+
+[node name="ControllerButton_5" type="CheckButton" parent="Controller_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=5"
+
+[node name="ControllerButton_6" type="CheckButton" parent="Controller_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=6"
+
+[node name="ControllerButton_7" type="CheckButton" parent="Controller_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=7"
+
+[node name="ControllerButton_8" type="CheckButton" parent="Controller_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=8"
+
+[node name="ControllerButton_9" type="CheckButton" parent="Controller_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=9"
+
+[node name="ControllerButton_10" type="CheckButton" parent="Controller_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=10"
+
+[node name="ControllerButton_11" type="CheckButton" parent="Controller_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=11"
+
+[node name="ControllerButton_12" type="CheckButton" parent="Controller_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=12"
+
+[node name="ControllerButton_13" type="CheckButton" parent="Controller_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=13"
+
+[node name="ControllerButton_14" type="CheckButton" parent="Controller_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+button_mask = 0
+text = "button_index=14"
+
+[node name="ControllerAxis_0" type="HBoxContainer" parent="Controller_1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Controller_1/ControllerAxis_0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "axis=0"
+
+[node name="HSlider" type="HSlider" parent="Controller_1/ControllerAxis_0"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+min_value = -1.0
+max_value = 1.0
+step = 0.001
+editable = false
+tick_count = 3
+ticks_on_borders = true
+
+[node name="ControllerAxis_1" type="HBoxContainer" parent="Controller_1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Controller_1/ControllerAxis_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "axis=1"
+
+[node name="HSlider" type="HSlider" parent="Controller_1/ControllerAxis_1"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+min_value = -1.0
+max_value = 1.0
+step = 0.001
+editable = false
+tick_count = 3
+ticks_on_borders = true
+
+[node name="ControllerAxis_2" type="HBoxContainer" parent="Controller_1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Controller_1/ControllerAxis_2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "axis=2"
+
+[node name="HSlider" type="HSlider" parent="Controller_1/ControllerAxis_2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+min_value = -1.0
+max_value = 1.0
+step = 0.001
+editable = false
+tick_count = 3
+ticks_on_borders = true
+
+[node name="ControllerAxis_3" type="HBoxContainer" parent="Controller_1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Controller_1/ControllerAxis_3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "axis=3"
+
+[node name="HSlider" type="HSlider" parent="Controller_1/ControllerAxis_3"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+min_value = -1.0
+max_value = 1.0
+step = 0.001
+editable = false
+tick_count = 3
+ticks_on_borders = true
+
+[node name="ControllerAxis_4" type="HBoxContainer" parent="Controller_1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Controller_1/ControllerAxis_4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "axis=4"
+
+[node name="HSlider" type="HSlider" parent="Controller_1/ControllerAxis_4"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+editable = false
+tick_count = 2
+ticks_on_borders = true
+
+[node name="ControllerAxis_5" type="HBoxContainer" parent="Controller_1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Controller_1/ControllerAxis_5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "axis=5"
+
+[node name="HSlider" type="HSlider" parent="Controller_1/ControllerAxis_5"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+editable = false
+tick_count = 2
+ticks_on_borders = true

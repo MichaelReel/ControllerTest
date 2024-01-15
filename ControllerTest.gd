@@ -6,33 +6,59 @@ var text_buffer: PackedStringArray = []
 var key_code_buffer: Dictionary = {}
 
 @onready var label: Label = $Label
-@onready var buttons: Array[CheckButton] = [
-	$Buttons/ControllerButton_0 as CheckButton,
-	$Buttons/ControllerButton_1 as CheckButton,
-	$Buttons/ControllerButton_2 as CheckButton,
-	$Buttons/ControllerButton_3 as CheckButton,
-	$Buttons/ControllerButton_4 as CheckButton,
-	$Buttons/ControllerButton_5 as CheckButton,
-	$Buttons/ControllerButton_6 as CheckButton,
-	$Buttons/ControllerButton_7 as CheckButton,
-	$Buttons/ControllerButton_8 as CheckButton,
-	$Buttons/ControllerButton_9 as CheckButton,
-	$Buttons/ControllerButton_10 as CheckButton,
-	$Buttons/ControllerButton_11 as CheckButton,
-	$Buttons/ControllerButton_12 as CheckButton,
-	$Buttons/ControllerButton_13 as CheckButton,
-	$Buttons/ControllerButton_14 as CheckButton,
+@onready var buttons_0: Array[CheckButton] = [
+	$"Controller_0/ControllerButton_0" as CheckButton,
+	$"Controller_0/ControllerButton_1" as CheckButton,
+	$"Controller_0/ControllerButton_2" as CheckButton,
+	$"Controller_0/ControllerButton_3" as CheckButton,
+	$"Controller_0/ControllerButton_4" as CheckButton,
+	$"Controller_0/ControllerButton_5" as CheckButton,
+	$"Controller_0/ControllerButton_6" as CheckButton,
+	$"Controller_0/ControllerButton_7" as CheckButton,
+	$"Controller_0/ControllerButton_8" as CheckButton,
+	$"Controller_0/ControllerButton_9" as CheckButton,
+	$"Controller_0/ControllerButton_10" as CheckButton,
+	$"Controller_0/ControllerButton_11" as CheckButton,
+	$"Controller_0/ControllerButton_12" as CheckButton,
+	$"Controller_0/ControllerButton_13" as CheckButton,
+	$"Controller_0/ControllerButton_14" as CheckButton,
 ]
-@onready var axes: Array[HSlider] = [
-	$Axes/ControllerAxis_0/HSlider as HSlider,
-	$Axes/ControllerAxis_1/HSlider as HSlider,
-	$Axes/ControllerAxis_2/HSlider as HSlider,
-	$Axes/ControllerAxis_3/HSlider as HSlider,
-	$Axes/ControllerAxis_4/HSlider as HSlider,
-	$Axes/ControllerAxis_5/HSlider as HSlider,
+@onready var buttons_1: Array[CheckButton] = [
+	$"Controller_1/ControllerButton_0" as CheckButton,
+	$"Controller_1/ControllerButton_1" as CheckButton,
+	$"Controller_1/ControllerButton_2" as CheckButton,
+	$"Controller_1/ControllerButton_3" as CheckButton,
+	$"Controller_1/ControllerButton_4" as CheckButton,
+	$"Controller_1/ControllerButton_5" as CheckButton,
+	$"Controller_1/ControllerButton_6" as CheckButton,
+	$"Controller_1/ControllerButton_7" as CheckButton,
+	$"Controller_1/ControllerButton_8" as CheckButton,
+	$"Controller_1/ControllerButton_9" as CheckButton,
+	$"Controller_1/ControllerButton_10" as CheckButton,
+	$"Controller_1/ControllerButton_11" as CheckButton,
+	$"Controller_1/ControllerButton_12" as CheckButton,
+	$"Controller_1/ControllerButton_13" as CheckButton,
+	$"Controller_1/ControllerButton_14" as CheckButton,
 ]
+@onready var buttons: Array[Array] = [buttons_0, buttons_1]
+@onready var axes_0: Array[HSlider] = [
+	$"Controller_0/ControllerAxis_0/HSlider" as HSlider,
+	$"Controller_0/ControllerAxis_1/HSlider" as HSlider,
+	$"Controller_0/ControllerAxis_2/HSlider" as HSlider,
+	$"Controller_0/ControllerAxis_3/HSlider" as HSlider,
+	$"Controller_0/ControllerAxis_4/HSlider" as HSlider,
+	$"Controller_0/ControllerAxis_5/HSlider" as HSlider,
+]
+@onready var axes_1: Array[HSlider] = [
+	$"Controller_1/ControllerAxis_0/HSlider" as HSlider,
+	$"Controller_1/ControllerAxis_1/HSlider" as HSlider,
+	$"Controller_1/ControllerAxis_2/HSlider" as HSlider,
+	$"Controller_1/ControllerAxis_3/HSlider" as HSlider,
+	$"Controller_1/ControllerAxis_4/HSlider" as HSlider,
+	$"Controller_1/ControllerAxis_5/HSlider" as HSlider,
+]
+@onready var axes: Array[Array] = [axes_0, axes_1]
 @onready var keycodes: Label = $Keyboard/KeyCodes
-
 
 func _ready() -> void:
 	text_buffer.push_back("OS: " + OS.get_name())
@@ -41,17 +67,27 @@ func _ready() -> void:
 	text_buffer.push_back("GPU: " + RenderingServer.get_rendering_device().get_device_name())
 	label.text =  "\n".join(text_buffer)
 
+	Input.connect("joy_connection_changed", self._on_joy_connections_changed)
+
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		# Ignore the mouse leaving and entering the window
+	if event is InputEventMouseMotion or event is InputEventMouseButton:
+		# Ignore the mouse leaving and entering the window and scroll wheel
 		pass
 	
 	elif event is InputEventJoypadButton:
-		buttons[event.button_index].button_pressed = event.pressed
-
+		if event.device >= 0 and event.device <= 1:
+			if event.button_index < len(buttons[event.device]):
+				buttons[event.device][event.button_index].button_pressed = event.pressed
+			else:
+				push_text_to_debug(
+					"button index " + str(event.button_index) + " unknown for device " + str(event.device)
+				)
+		else:
+			push_text_to_debug("three or more devices detected")
+	
 	elif event is InputEventJoypadMotion:
-		axes[event.axis].value = event.axis_value
+		axes[event.device][event.axis].value = event.axis_value
 	
 	elif event is InputEventKey:
 		if event.pressed:
@@ -67,8 +103,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		keycodes.text = "\n".join(key_code_buffer.values())
 	
 	else:
-		text_buffer.push_back(str(event))
-		while len(text_buffer) > MAX_LINES:
-			text_buffer.remove_at(0)
-		label.text =  "\n".join(text_buffer)
+		push_text_to_debug(str(event))
 
+func push_text_to_debug(text: String) -> void:
+	text_buffer.push_back(text)
+	while len(text_buffer) > MAX_LINES:
+		text_buffer.remove_at(0)
+	label.text =  "\n".join(text_buffer)
+
+func _on_joy_connections_changed(device: int, connected: bool) -> void:
+	push_text_to_debug("joy connection changed, device: " + str(device) + ", connected: " + str(connected))
