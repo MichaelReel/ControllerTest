@@ -66,25 +66,32 @@ func _ready() -> void:
 	text_buffer.push_back("CPU: " + OS.get_processor_name())
 	text_buffer.push_back("GPU: " + RenderingServer.get_rendering_device().get_device_name())
 	label.text =  "\n".join(text_buffer)
-
+	
 	Input.connect("joy_connection_changed", self._on_joy_connections_changed)
 
 
+func _process(_delta: float) -> void:
+	if Input.is_action_pressed("back_plate_p1_r4"):
+		push_text_to_debug("back_plate_p1_r4")
+	if Input.is_action_pressed("back_plate_p1_l4"):
+		push_text_to_debug("back_plate_p1_l4")
+
+
 func _unhandled_input(event: InputEvent) -> void:
+	if event.device >= 1:
+		push_text_to_debug("three or more devices detected")
+	
 	if event is InputEventMouseMotion or event is InputEventMouseButton:
 		# Ignore the mouse leaving and entering the window and scroll wheel
 		pass
 	
 	elif event is InputEventJoypadButton:
-		if event.device >= 0 and event.device <= 1:
-			if event.button_index < len(buttons[event.device]):
-				buttons[event.device][event.button_index].button_pressed = event.pressed
-			else:
-				push_text_to_debug(
-					"button index " + str(event.button_index) + " unknown for device " + str(event.device)
-				)
-		else:
-			push_text_to_debug("three or more devices detected")
+		if event.button_index >= len(buttons[event.device]):
+			push_text_to_debug(
+				"button index " + str(event.button_index) + " unknown for device " + str(event.device)
+			)
+		
+		buttons[event.device][event.button_index].button_pressed = event.pressed
 	
 	elif event is InputEventJoypadMotion:
 		axes[event.device][event.axis].value = event.axis_value
@@ -105,11 +112,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	else:
 		push_text_to_debug(str(event))
 
+
 func push_text_to_debug(text: String) -> void:
 	text_buffer.push_back(text)
 	while len(text_buffer) > MAX_LINES:
 		text_buffer.remove_at(0)
 	label.text =  "\n".join(text_buffer)
+
 
 func _on_joy_connections_changed(device: int, connected: bool) -> void:
 	push_text_to_debug("joy connection changed, device: " + str(device) + ", connected: " + str(connected))
